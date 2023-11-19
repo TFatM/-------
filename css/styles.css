@@ -36,22 +36,33 @@
     --color-primory-dark: #31261A;
     --color-primory-light: #FAF4EA;
 }
-*{
+*
+::before,
+::after{
     box-sizing: border-box;
 }
 body{
     color: var(--color-primory-dark);
+    background-color: var(--color-primory-light);
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5
 }
-
+address{
+    font-style: normal;
+}
 h1, h2, h3, h4, h5, h6, p{
     margin-top: 0;
 }
+
+a {
+    display: inline-block;
+}
 /* main */
 ul{
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 .visually-hidden{
@@ -96,86 +107,255 @@ text-align: center;
 line-height: 1.5;
 }
 .link:hover{
-    color: var(--color-brand-light);
-    font-weight: 600;
-    
+    color: var(--color-brand-light); 
+}
+/* Header */
+.header{
+    background-color: teal; /* remove */
+}
+.header-container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.header-nav{
+    flex-grow: 1;
+    gap: 40px;
+}
+.header-menu{
+    display: flex;
+    gap: 64px;
+    flex-grow: 1;
+    justify-content: center;
 }
 /* text */
-.hero-section{
-    padding: 272px, 0;
+.hero-section {
+    padding: 272px 0;
+    background-image: url('../images/bakery.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
 }
 .hero-title{
     margin-bottom: 0;
     color: var(--color-primory-light);
 text-align: center;
-font-size: 128px;
 font-weight: 900;
+font-size: 128px;
+
 }
 .hero-title .accent{
     color: var(--color-brand-light);
 }
+.advantages-section {
+    padding: 16px 0;
+    background-color: var(--color-brand-light);
+}
 .advantages{
-    color: var(--color-primory-light);
-    background-color:var(--color-brand-light);
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 
 }
 .advantages-item{
     font-weight: 300;
     font-size: 20px;
+        color: var(--color-primory-light);
 }
 .section-title{
-    color: var(--color-primory-dark);
     font-weight: 900;
     font-size: 64px;
     line-height: 1.3;
 }
+
+.section-title.centered{
+    text-align: center;
+
+}
+.section-title .accent{
+        color: var(--color-primory-dark);
+}
+/* chefs section */
+.section-title .chefs {
+    color: var(--color-brand-dark);
+}
+
+.chefs-name {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.cheffs-title {
+    max-width: 520px;
+    margin: 0 auto 80px;
+}
+.cheff-text p{
+    margin-bottom: 24px;
+}
+.cheff-text p:last-child{
+    margin-bottom: 0;
+}
+.cheffs-title::before,
+.cheffs-title::after{
+    display: block;
+    width: 352px;
+border: 2px solid #CFCFBC;
+content: '';
+}
+.chefs-list {
+    display: flex;
+    gap: 40px 30px;
+    flex-wrap: wrap;
+}
+.chefs-item{
+    flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card{
+    display: flex;
+    gap: 30px;
+}
+.chef-image{
+    border-radius: 4px 4px 4px 200px;
+    box-shadow: -16px 16px 0 0 var(--color-primory-light), -16px 16px 0 2px #A18268;
+}
+/* tradition section */
+.traditions-section {
+    padding-top: 96px;
+}
+
+.traditions-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.traditions-content {
+    max-width: 710px;
+}
+
+.tradition-title {
+    margin-bottom: 42px;
+}
+
+.tradition-text .brand {
+    color: var(--color-brand-light);
+    font-weight: 600;
+}
+
+.tradition-text .uppercase {
+    text-transform: uppercase;
+}
+
+.tradition-text.limited {
+    max-width: 360px;
+}
 /* format section */
+.formats-container{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.format-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.format-item{
+    flex-basis: calc((100% - 40px) / 3);
+}
+.format-card{
+    height: 444px;
+    padding: 24px;
+background: linear-gradient(180deg,
+ rgba(49, 38, 26, 0) 55.21%,
+  rgba(49, 38, 26, 0.71) 72.92%,
+ #31261A 100%);
+    border: 1px solid lightblue; /*remove*/
+    border-radius: 16px;
+}
+.formats-title{
+    margin-bottom: 80px;
+}
 .format-title{
-    color: var(--color-primory-light);
-font-weight: 600;
-font-size: 24px;
+    font-weight: 600;
+        font-size: 24px;
+    color: var(--color-primory-dark);
 }
 .format-text{
     color: var(--color-primory-light);
     font-weight: 300;
     font-size: 14px;
-}
-.format-title{
-    margin-bottom: 80px;
-}
-/* chefs section */
-.section-title .chefs{
-    color: var(--color-brand-dark);
-}
-.chefs-name{
-        font-weight: 600;
-        font-size: 40px;
-        margin-bottom: 16px;
-}
-.cheffs-title{
-    margin-bottom: 80px;
-}
-/* tradition section */
-.traditions-section{
-    padding-top: 96px;
+
 }
 
-.tradition-title{
-    margin-bottom: 42px;
+/* carousel */
+
+.carousel-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    fill: var(--color-primory-dark);
+    background-color: transparent;
+    border: 1px solid var(--color-primory-dark);
+    cursor: pointer;
 }
-.tradition-text .brand{
-    color: var(--color-brand-light);
-    font-weight: 600;
+
+.carousel-button:hover{
+    background-color: var(--color-primory-dark);
+    fill: var(--color-primory-light);
 }
-.tradition-text .uppercase{
-    text-transform: uppercase;
-}
+
 /*contact section*/
+.contact-section{
+        padding: 96px;
+}
+.contact-container{
+    display: flex;
+    gap: 32px;
+}
+.contact-map{
+    flex-shrink: 0;
+    border: none;
+    border-radius: 16px;
+}
 .contact-text{
     color: var(--color-brand-dark);
 }
 .contact-title{
     margin-bottom: 16px;
+}
+.footer-container{
+    display: flex;
+    gap: 20px;
+}
+.footer-nav{
+    display: flex;
+    gap: 20px;
+    flex-basis: 50%;
+}
+.footer-logo,
+.footer-menu{
+    flex-grow: 1;
+}
+.adress-list,
+.adress-info{
+    flex-grow: 1;
+}
+.footer-adress{
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+}
+.adress-list{
+
+    gap: 20px;
 }
 .adress-link{
     color: var(--color-primory-light);
@@ -191,4 +371,18 @@ font-size: 24px;
 }
 .adress-copyright{
     color: #A18268;
+}
+.adress-icon{
+   fill: var(--color-primory-light);
+}
+.adress-icon:hover{
+    fill: var(--color-brand-light);
+}
+.footer{
+    padding: 32px 0;
+    background-color: var(--color-primory-dark);
+    background-image: url('../images/footer-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
